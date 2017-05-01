@@ -1,0 +1,66 @@
+% engine=luajittex
+
+\placebookmarks[chapter,section,subsection][chapter,section]
+\setupinteractionscreen[option=bookmark]
+
+\setupinteraction
+[
+  state=start,
+  title={Leasehold},
+  author={Adam Reviczky},
+  keyword={leasehold},
+]
+
+\setuppapersize[A4,portrait][A4,portrait]
+\mainlanguage[uk]
+
+\definefontfeature[default][default][protrusion=quality,expansion=quality]
+\setupalign[hz,hanging]
+\setupbodyfont[heros,12pt]
+
+\setuplayout
+[
+  backspace=18.75mm,
+  cutspace=18.75mm,
+  width=172.5mm,
+  topspace=15mm,
+  bottomspace=15mm,
+  header=10mm,
+  footer=10mm,
+  height=267mm,
+]
+
+\setuppagenumbering[location=]
+
+\showframe
+
+\starttext
+{
+\switchtobodyfont[cursor,10pt]
+{\bf These are the notes referred to on the following official copy} \\
+\blank[2*line]
+Title Number NGL407984 \\
+\blank[line]
+The electronic official copy of the document follows this message. \\
+\blank[line]
+This copy may not be the same size as the original.
+\blank[line]
+Please note that this is the only official copy we will issue. We will not issue a paper official copy. \\
+}
+
+\page[yes]
+
+\setupfootertexts[\setups{copy}][]
+
+\startsetups[copy]
+\switchtobodyfont[cursor,10pt] This official copy is incomplete without the preceding notes page.
+\stopsetups
+
+\WORD{This Lease} is made the {\it 2nd} day of {\it October} One thousand nine hundred and eighty one \WORD{between Tandalco Corporation N.V.} Curacao Breedestraat 39C Netherlands Antilles (hereinafter called "the Lessor") of the first part \WORD{Gorly Corporation N.V.} also of Curacao Breedestraat 39C Netherlands Antilles (hereinafter called "Gorly") of the second part \WORD{Cliffords Inn Management Company Limited} of 20 Essex Street Strand London WC2R 3AL (hereinafter called "the Management Company") of the third part \WORD{William Cameron Shaw} and \WORD{Madeleine Ann Shaw} both of "Manola" the Thatchway Angmering West Sussex (hereinafter called "the Lessee") of the fourth part \par
+
+\WORD{Whereas:}
+\startitemize[n,nowhite][left=(,right=),stopper=,width=5em]
+\item The Lessor is the freehold owner of the building being part of Cliffords Inn New Fetter Lane London EC4 the freehold title of which is registered at H.M. Land Registry under Title No. 80806 and of which the premises hereinafter demised form part (hereinafter called "the Building")
+\item By an Agreement
+\stopitemize
+\stoptext
