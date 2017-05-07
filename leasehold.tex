@@ -15,8 +15,21 @@
 \mainlanguage[uk]
 
 \definefontfeature[default][default][protrusion=quality,expansion=quality]
-\setupalign[hz,hanging]
+\setupalign[tolerant,nothyphenated,justified,hz,hanging]
 \setupbodyfont[heros,12pt]
+
+\definelayout[indent]
+[
+  backspace=33.75mm,
+  leftmargin=25mm,
+  cutspace=18.75mm,
+  width=157.5mm,
+  topspace=15mm,
+  bottomspace=15mm,
+  header=10mm,
+  footer=10mm,
+  height=267mm,
+]
 
 \setuplayout
 [
@@ -31,6 +44,9 @@
 ]
 
 \setuppagenumbering[location=]
+
+\usecolors[xwi]
+\definetextbackground[highlight][frame=off,location=paragraph,backgroundcolor=dodgerblue]
 
 \showframe
 
@@ -49,18 +65,66 @@ Please note that this is the only official copy we will issue. We will not issue
 }
 
 \page[yes]
-
-\setupfootertexts[\setups{copy}][]
+\setuplayout[indent]
+%\setupfootertexts[\setups{copy}][]
+\setupfootertexts[][\setups{copy}]
 
 \startsetups[copy]
-\switchtobodyfont[cursor,10pt] This official copy is incomplete without the preceding notes page.
+\framed[frame=off,width=\dimexpr\textwidth+\marginwidth\relax,align=right]{\switchtobodyfont[cursor,10pt] This official copy is incomplete without the preceding notes page.} \\
+%\switchtobodyfont[cursor,10pt] This official copy is incomplete without the preceding notes page.
 \stopsetups
 
-\WORD{This Lease} is made the {\it 2nd} day of {\it October} One thousand nine hundred and eighty one \WORD{between Tandalco Corporation N.V.} Curacao Breedestraat 39C Netherlands Antilles (hereinafter called "the Lessor") of the first part \WORD{Gorly Corporation N.V.} also of Curacao Breedestraat 39C Netherlands Antilles (hereinafter called "Gorly") of the second part \WORD{Cliffords Inn Management Company Limited} of 20 Essex Street Strand London WC2R 3AL (hereinafter called "the Management Company") of the third part \WORD{William Cameron Shaw} and \WORD{Madeleine Ann Shaw} both of "Manola" the Thatchway Angmering West Sussex (hereinafter called "the Lessee") of the fourth part \par
+\WORD{This Lease} is made the {\it \hspace[big] 2nd \hspace[big]} day of {\it \hspace[big] October \hspace[big]} One thousand nine hundred and eighty one \WORD{between Tandalco Corporation N.V.} Curacao Breedestraat 39C Netherlands Antilles (hereinafter called "the Lessor") of the first part \WORD{Gorly Corporation N.V.} also of Curacao Breedestraat 39C Netherlands Antilles (hereinafter called "Gorly") of the second part \WORD{Cliffords Inn Management Company Limited} of 20 Essex Street Strand London WC2R 3AL (hereinafter called "the Management Company") of the third part \WORD{William Cameron Shaw} and \WORD{Madeleine Ann Shaw} both of "Manola" the Thatchway Angmering West Sussex (hereinafter called "the Lessee") of the fourth part \par
 
+\definecharacterkerning[wide][factor=.2]
+\setcharacterkerning[wide]
 \WORD{Whereas:}
-\startitemize[n,nowhite][left=(,right=),stopper=,width=5em]
-\item The Lessor is the freehold owner of the building being part of Cliffords Inn New Fetter Lane London EC4 the freehold title of which is registered at H.M. Land Registry under Title No. 80806 and of which the premises hereinafter demised form part (hereinafter called "the Building")
-\item By an Agreement
+\setcharacterkerning[reset]
+\startitemize[n,nowhite,intext][left=(,right=),stopper=,width=3em]
+\startitem The Lessor is the freehold owner of the building being part of Cliffords Inn New Fetter Lane London EC4 the freehold title of which is registered at H.M. Land Registry under Title No. 80806 and of which the premises hereinafter demised form part (hereinafter called "the Building") \stopitem
+\startitem By an Agreement dated the 7th day of February 1980 and made between them Gorly has the right to require the Lessor to grant lesses of the flat in the Building to tenants found by it and has accordingly required the Lessor to grant this Lease to the Lessee \stopitem
+\startitem The Lessor has previously let flats and it and Gorly intend hereafter to let the other flats in the Building (as and when they become available for letting) upon long leases in terms substancially the same as this lease (except as to duration and rent) and the Lessor has imposed and it and Gorly intend to impose in every such lease restrictions similar to those in Clause 4 and the Fourth Schedule hereof to the intent that the tenant for the time being of any flat in the Building will be able to enforce the observance thereof by the tenants or occupiers for the time being of the other flats therein \stopitem
 \stopitemize
+\WORD{Now this Lease witnesseth} as follows:
+\startitemize[n,joinedup,nowhite,intext][stopper=.,width=3em]
+\startitem In this Lease where the context so admits the following expressions have the meanings hereinafter mentioned:- \stopitem
+\startitemize[a,joinedup,nowhite][left=(,right=),stopper=,width=3em]
+\startitem "the term hereby granted" and "the said term" both mean the term for which this lease is granted as specified in Clause 2 thereof together with any statutory continuation thereof: \stopitem
+\startitem "the Lessor" shall mean the person or persons for the time being entitled to the reversion immediately expectant on the term hereby granted; \stopitem
+\page[yes]
+\startitem "the Lessee" shal include its successors in title and assigns; \stopitem
+\starttextbackground[highlight] \sym{\starttextbackground[highlight](d)\stoptextbackground} "the demised premises" mean the Flat No. 61 in the Building being the premises shown for the purpose of identification only edged red on the plan of the third floor thereof annexed hereto including the floor and the ceiling thereof and the joists on which the floor rests but not any air space below the floor or above the ceiling and the walls thereof so far as they are interior walls of the Building (including one half of any party wall between them and another flat) and the glass in the windows and the inside surface but not any other part of the external walls of the Building and the appurtenances thereto belonging and also all alterations additions and improvements from time to time made thereto; \stoptextbackground
+\stopitemize
+\startitemize[a,joinedup,nowhite][start=5,left=(,right=),stopper=,width=3em]
+\startitem "the Residential Part" means the third fourth fifth sixth seventh and eighth floors of the Building including the roof thereof and the joists supporting the third floor and the air space between the ceiling of the second floor and the third floor and the exterior walls thereof from above the level of the ceiling of the second floor thereof; \stopitem
+\startitem "Flats" means all or any of the residential flats in the Building; \stopitem
+\startitem "the Common Parts" means the Residential Part excluding the Flats and any part for the time being included in the lease of any Flat shall be deemed for the time being not to be included in the Common Parts; \stopitem
+\startitem if at any time the Lessor shall grant a lease of the whole of the Residential Part subject to the lease of the Flats as then subsisting the expression "the Head Lease" shall mean such lease and the expression "the Head Landlord" shall be constructed accordingly; \stopitem
+\startitem "the Planning Acts" means the Town and Country Planning Acts 1971 to 1977 and reference thereto in this Lease or to any other Act of Parliament shall include every Act of Parliament for the time being in force amending modifying or replacing the same and all Orders Regulations and Directions already made or issued or hereafter to be made or issued thereunder; \stopitem
+\startitem "the event" means when the entrance entrance hall stairways landings on the ground floor first floor and second floor of the Building and the lifts situate in this part of the Building are used exclusively (except in case of emergency) for the benefit of the residents and tenants of the Residential Part of the Building and for the avoidance of doubt the event shall be deemed to have occured when the Lessors Surveyor shall issue a certificate that such part of the building be used exclusively for the Residential Part of the building after the happening of the event the expression "Common Parts" shall be deemed to include such entrance entrance hall stairways landings on the ground floor first floor second floor and the lifts in this part of the Building \stopitem
+\page[yes]
+\stopitemize
+\WORD{And} in this Lease unless there is something in the context inconsistent therewith; \\
+\startitemize[a,joinedup,nowhite,continue][left=(,right=),stopper=,width=3em]
+\startitem word importing persons and all references to persons shall include companies corporations and firms and vice versa; \stopitem
+\startitem if at any time two or more persons are included in the expressions "the Lessee" or "the Lessor" then covenants entered into or implied herein by the Lessee or the Lessor shall be deemed to be and shall be construed as covenants entered into and binding on such persons jointly and severally \stopitem
+\stopitemize
+\startitem In consideration of the sum of \WORD{Thirty Five Thousand Pounds} (£35,000) now paid by the Lessee to the Lessor (the receipt whereof the Lessor hereby acknowledges) and of the rents herein reserved and of the covenants by the Lessee herein contained the Lessor \WORD{hereby demises} unto the Lessee \WORD{all those} the demised premises \WORD{together} with all items in or about the demised premises in the nature of Lessor's fixtures and fittings \WORD{and together also} with the particular rights set forth in the First Schedule hereto so far as the Lessor has power to grant the same \WORD{but excepting and reserving} the particular rights and matters set out in the Second Schedule hereto and \WORD{subject to} all rights easements quasi-easements and privileges now enjoyed by any adjoining or neighbouring premises including the remainder of the Building or the owners or occupiers thereof which in any manner affected the demised premises or the owners or occupiers thereof and to the matters referred to in the entries relating to Title No. 80806 at H.M. Land Registry \WORD{to hold} the demised premises unto the Lessee (together with but excepting and reserving and subject as aforesaid) from the 25th day of December 1979 for the \WORD{term} of \WORD{one hundred years} less the last three days thereof then next ensuing \WORD{yielding and paying} therefor unto the Lessor during the said term and in proportion for any less time than a year without any deductions threfrom whatsoever (save only such if any as may from time to time by law be required notwithstanding agreement to the contrary) the following yearly \WORD{rents} namely: \stopitem
+\startitemize[a,joinedup,nowhite][left=(,right=),stopper=,width=3em]
+\startitem \WORD{First}:- \stopitem
+\startitemize[r,joinedup,nowhite,intext][left=(,right=),stopper=,width=3em]
+\startitem during the first twenty five years of the said term the yearly rent of £75.00 exclusive of all outgoings; \stopitem
+\startitem during the next twenty five years thereof the yearly rent of £112.50 exclusive as aforesaid; \stopitem
+\startitem during the next twenty five years thereof the yearly rent of £150.00 exclusive as aforesaid; \stopitem
+\startitem during the final twenty five years less three days thereof the yearly rent of £187.50 exclusive aforesaid \stopitem
+\stopitemize
+\stopitemize
+such yearly rents to be paid by equal instalments in advance on the 25th day of March and the 29th day of September in each year of the said term of which the first instalment (being the due proportion in respect of the period from the date) \\
+\page[yes]
+hereof to the {\it \hspace[big] 24th \hspace[big]} day of {\it \hspace[big] March \hspace[big]} next) shall be paid forthwith on the execution of these presents and \\
+\startitemize[a,joinedup,nowhite,continue][left=(,right=),stopper=,width=3em]
+\startitem \WORD{Secondly} \stopitem
+\stopitemize
+\stopitemize
+%\setuplayout[reset]
 \stoptext
